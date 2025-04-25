@@ -2,6 +2,10 @@ a {
     margin-left: 5px !important;
 }
 
+body{
+    overflow-x: hidden;
+}
+
 /* Right to Left (default scroll) */
 @keyframes rightScroll {
     0% {
