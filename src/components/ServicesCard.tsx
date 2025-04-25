@@ -1,49 +1,35 @@
 import React from 'react';
+import tickmark from '@/assets/Svgs/tickmark.svg';
 
-const ServiceCard: React.FC = () => {
+interface ServiceCardProps {
+    icon: React.ReactNode;
+    heading: string;
+    description: string;
+    checklist: string[];
+}
+
+const ServiceCard: React.FC<ServiceCardProps> = ({ icon, heading, description, checklist }) => {
     return (
-        <div className="bg-white rounded-2xl p-8 shadow-lg mx-auto">
+        <div className="bg-white rounded-2xl p-4 shadow-lg mx-auto">
             {/* Icon */}
             <div className="flex items-center justify-center w-12 h-12 bg-gray-100 rounded-full mb-4">
-                <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>
-                </svg>
+              <img src={icon} alt="" />
             </div>
 
             {/* Heading */}
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Web Development</h2>
+            <h2 className="text-[24px] font-[500] mb-4">{heading}</h2>
 
             {/* Description */}
-            <p className="text-gray-600 leading-relaxed mb-6">
-                Build stunning, fast, and SEO-optimized websites that represent your brand and convert visitors into customers. We deliver:
-            </p>
+            <p className="text-gray-600 leading-relaxed mb-6">{description}</p>
 
             {/* Checklist */}
             <ul className="space-y-3">
-                <li className="flex items-center space-x-3">
-                    <svg className="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                    <span className="text-gray-900">Corporate websites, portals, landing pages</span>
-                </li>
-                <li className="flex items-center space-x-3">
-                    <svg className="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                    <span className="text-gray-900">Responsive design for all devices</span>
-                </li>
-                <li className="flex items-center space-x-3">
-                    <svg className="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                    <span className="text-gray-900">E-commerce platforms</span>
-                </li>
-                <li className="flex items-center space-x-3">
-                    <svg className="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                    <span className="text-gray-900">Booking & service platforms</span>
-                </li>
+                {checklist.map((item, index) => (
+                    <li key={index} className="flex items-center space-x-3">
+                        <img src={tickmark} alt="" />
+                        <span className="text-black font-[500]">{item}</span>
+                    </li>
+                ))}
             </ul>
         </div>
     );
