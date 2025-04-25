@@ -1,9 +1,9 @@
 import React from 'react'
 
-const AboutUs = () => {
+const index = () => {
   return (
-    <div className='flex items-center justify-center h-[140vh] w-full bg-black color-white text-white'>AboutUs</div>
+    <div>index</div>
   )
 }
 
-export default AboutUs
+export default index
