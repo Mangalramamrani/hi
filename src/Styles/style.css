@@ -1,0 +1,34 @@
+a {
+    margin-left: 5px !important;
+}
+
+/* Right to Left (default scroll) */
+@keyframes rightScroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-250px * 7));
+    }
+}
+
+/* Left to Right scroll */
+@keyframes leftScroll {
+    0% {
+        transform: translateX(calc(-250px * 7));
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+/* Classes to apply scroll animations */
+.animate-right-scroll {
+    animation: rightScroll 30s linear infinite;
+}
+
+.animate-left-scroll {
+    animation: leftScroll 30s linear infinite;
+}
