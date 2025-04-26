@@ -42,7 +42,6 @@ const Home = () => {
   return (
     <>
       <section className='bg-gradient-to-b from-blue-50 to-transparent'>
-        <h1 className='my-16 bg-red-800 h-[200px]'>kia hal hai janab</h1>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center justify-between">
             {/* Text Section */}
